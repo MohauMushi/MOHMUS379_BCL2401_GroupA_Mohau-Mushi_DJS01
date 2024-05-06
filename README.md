@@ -28,19 +28,11 @@ This challenge invites students to debug, refactor, and enhance JavaScript funct
 - **New Distance**: Approximately 10000 km after correction.
 - **Remaining Fuel**: Approximately 3,200 kg after correction.
 
-#### Your Task
+### Challenges 
+The challenges which i faced was doing the conversion for the velocity to be in meters per seconds, and be able to use the velocityMs it trought out the whole code.
+Another challenge was coverting back to km/s from m/s for the new velocity to be able to meet the corrected new velocity in km/s
 
+## 📚 what I Learned
 1. **Identify and Understand Errors**: Analyse the provided functions to determine how unit mismatches and parameter misalignments cause incorrect results.
 2. **Refactor and Correct**: Modify the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
-
-#### Solution Approach
-
-- Use object destructuring in function parameters for better clarity.
-- Implement accurate unit conversions within the functions.
-- Ensure the corrected functions address the issues of unit mismatches and parameter clarity.
-
-#### Debugging Guide
-
-1. Enhance code readability for easier debugging.
-2. Identify and correct calculation errors.
-3. Improve the robustness of calculations. If incorrect units are used or other errors are detected, the code should notify the user instead of producing an incorrect result.
+3. Implementing accurate unit conversions within the functions
