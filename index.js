@@ -16,7 +16,9 @@ const fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
 // Units conversion
 let velocityMs = velocityKmH * 1000 / 3600 // Converting Km/h -> m/s
 
-const newDistance = distanceKm + (velocityMs * timeSeconds) //calcultes new distance
+//calcultes new distance
+const newDistance = distanceKm + (velocityMs * timeSeconds) 
+let newDistanceKm = newDistance / 1000;  // converting m -> km for the new distance
 
 //calculating remaining fuel
 const remainingFuel = fuelKg - (fuelBurnRateKgS * timeSeconds) 
@@ -29,7 +31,7 @@ function calcNewVel(accelerationMs2, velocityMs, timeSeconds){
 const newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) //calculates new velocity based on acceleration
 
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
-console.log(`Corrected New Distance: ${newDistance} km`);
+console.log(`Corrected New Distance: ${newDistanceKm} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
 
 
