@@ -28,9 +28,11 @@ function calcNewVel(accelerationMs2, velocityMs, timeSeconds){
   return velocityMs + (accelerationMs2 * timeSeconds)
 }
 
-let newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) //calculates new velocity based on acceleration
+//calculates new velocity based on acceleration
+let newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) 
+let newVelocityKmH = newVelocity * (3600 / 1000); // converting m/s to km/h
 
-console.log(`Corrected New Velocity: ${newVelocity} km/h`);
+console.log(`Corrected New Velocity: ${newVelocityKmH} km/h`);
 console.log(`Corrected New Distance: ${newDistanceKm} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
 
