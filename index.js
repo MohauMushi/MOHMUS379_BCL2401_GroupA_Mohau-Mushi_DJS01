@@ -6,29 +6,29 @@
  */
 
 // Given Parameters
-const velocityKmH = 10000; // velocity (km/h)
-const accelerationMs2 = 3; // acceleration (m/s^2)
-const timeSeconds = 3600; // seconds (1 hour)
-const distanceKm = 0; // distance (km)
-const fuelKg = 5000; // remaining fuel (kg)
-const fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
+let velocityKmH = 10000; // velocity (km/h)
+let accelerationMs2 = 3; // acceleration (m/s^2)
+let timeSeconds = 3600; // seconds (1 hour)
+let distanceKm = 0; // distance (km)
+let fuelKg = 5000; // remaining fuel (kg)
+let fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
 
 // Units conversion
 let velocityMs = velocityKmH * 1000 / 3600 // Converting Km/h -> m/s
 
 //calcultes new distance
-const newDistance = distanceKm + (velocityMs * timeSeconds) 
+let newDistance = distanceKm + (velocityMs * timeSeconds) 
 let newDistanceKm = newDistance / 1000;  // converting m -> km for the new distance
 
 //calculating remaining fuel
-const remainingFuel = fuelKg - (fuelBurnRateKgS * timeSeconds) 
+let remainingFuel = fuelKg - (fuelBurnRateKgS * timeSeconds) 
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel(accelerationMs2, velocityMs, timeSeconds){ 
   return velocityMs + (accelerationMs2 * timeSeconds)
 }
 
-const newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) //calculates new velocity based on acceleration
+let newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) //calculates new velocity based on acceleration
 
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistanceKm} km`);
