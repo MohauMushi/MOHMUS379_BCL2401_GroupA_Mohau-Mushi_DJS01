@@ -10,12 +10,14 @@ const velocityKmH = 10000; // velocity (km/h)
 const accelerationMs2 = 3; // acceleration (m/s^2)
 const timeSeconds = 3600; // seconds (1 hour)
 const distanceKm = 0; // distance (km)
-const remainingFuelKg = 5000; // remaining fuel (kg)
+const fuelKg = 5000; // remaining fuel (kg)
 const fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
 
 
 const newDistance = distanceKm + (velocityKmH * timeSeconds) //calcultes new distance
-const remainingFuel = fuelBurnRateKgS * timeSeconds //calculates remaining fuel
+
+//calculating remaining fuel
+const remainingFuel = fuelKg - (fuelBurnRateKgS * timeSeconds) 
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel(accelerationMs2, velocityKmH, timeSeconds){ 
