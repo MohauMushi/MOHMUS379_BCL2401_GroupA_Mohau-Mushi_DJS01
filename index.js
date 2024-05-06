@@ -13,6 +13,8 @@ const distanceKm = 0; // distance (km)
 const fuelKg = 5000; // remaining fuel (kg)
 const fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
 
+// Units conversion
+let velocityMs = velocityKmH * 1000 / 3600 // Converting Km/h -> m/s
 
 const newDistance = distanceKm + (velocityKmH * timeSeconds) //calcultes new distance
 
