@@ -19,7 +19,7 @@ The Mars Climate Orbiter incident in 1999 is a stark reminder of the importance 
 - **New Distance**: Approximately 10000 km after correction.
 - **Remaining Fuel**: Approximately 3,200 kg after correction.
 
-### Challenges 
+### Challenges faced in the project
 The challenges which i faced was doing the conversion for the velocity to be in meters per seconds, and be able to use the velocityMs it trought out the whole code.
 Another challenge was coverting back to km/s from m/s for the new velocity to be able to meet the corrected new velocity in km/s
 
