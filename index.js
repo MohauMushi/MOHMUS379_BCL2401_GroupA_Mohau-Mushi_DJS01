@@ -1,37 +1,37 @@
-// Given Parameters
-let velocityKmH = 10000; // velocity (km/h)
-let accelerationMs2 = 3; // acceleration (m/s^2)
-let timeSeconds = 3600; // seconds (1 hour)
-let distanceKm = 0; // distance (km)
-let fuelKg = 5000; // remaining fuel (kg)
-let fuelBurnRateKgS = 0.5; // fuel burn rate (kg/s)
-
+//A constant object named props 
+const props = {
+ velocityKmH : 10000, // velocity (km/h)
+ accelerationMs2 : 3, // acceleration (m/s^2)
+ timeSeconds : 3600, // seconds (1 hour)
+ distanceKm : 0, // distance (km)
+ fuelKg : 5000, // remaining fuel (kg)
+ fuelBurnRateKgS : 0.5 // fuel burn rate (kg/s)
+}
 // Units conversion
-let velocityMs = velocityKmH * 1000 / 3600 // Converting Km/h -> m/s
+const conversionRate = 3.6; // 1 m/s = 3.6 km/h
 
 //calculting new distance
-let newDistanceM = distanceKm + (velocityMs * timeSeconds) 
-let newDistanceKm = newDistanceM / 1000;  // converting m -> km for the new distance
+let newDistanceKm = props.distanceKm + (props.velocityKmH * props.timeSeconds/3600) 
 
 //calculating remaining fuel
-let remainingFuel = fuelKg - (fuelBurnRateKgS * timeSeconds) 
+let remainingFuel = props.fuelKg - (props.fuelBurnRateKgS * props.timeSeconds) 
 
-// Calculating the new velocity by adding the product of acceleration and time to the initial velocity.
-function calcNewVel(accelerationMs2, velocityMs, timeSeconds){ 
-  return velocityMs + (accelerationMs2 * timeSeconds)
+// an arrow function named calcNewVel that takes an object props as its argument.
+const calcNewVel = (props) => {
+   // Check if props is provided, throw an error if not
+  if(!props) throw new Error(`"props" is requred`);
+  
+  // Destructure the required properties from props
+  const {accelerationMs2, velocityKmH, timeSeconds} = props;
+
+  // Calculate the new velocity
+  return velocityKmH + ((accelerationMs2 * timeSeconds) * conversionRate);
 }
 
-//calculating new velocity based on acceleration
-let newVelocity = calcNewVel(accelerationMs2, velocityMs, timeSeconds) 
-let newVelocityKmH = newVelocity * (3600 / 1000); // converting m/s to km/h
+// declaring a variable newVelocity and assigning it the value returned by a function calcNewVel
+let newVelocity = calcNewVel(props);
 
 // Consoling the output for the corrected new velocity, distance and remaining fuel
-console.log(`Corrected New Velocity: ${newVelocityKmH} km/h`);
+console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistanceKm} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
-
-
-
-
-
-
