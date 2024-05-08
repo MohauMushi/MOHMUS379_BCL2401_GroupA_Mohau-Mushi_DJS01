@@ -1,5 +1,5 @@
-//A constant object named props 
-const props = {
+//A constant object named object 
+const object = {
  velocityKmH : 10000, // velocity (km/h)
  accelerationMs2 : 3, // acceleration (m/s^2)
  timeSeconds : 3600, // seconds (1 hour)
@@ -11,10 +11,10 @@ const props = {
 const conversionRate = 3.6; // 1 m/s = 3.6 km/h
 
 //calculting new distance
-let newDistanceKm = props.distanceKm + (props.velocityKmH * props.timeSeconds/3600) 
+let newDistanceKm = object.distanceKm + (object.velocityKmH * object.timeSeconds/3600) 
 
 //calculating remaining fuel
-let remainingFuel = props.fuelKg - (props.fuelBurnRateKgS * props.timeSeconds) 
+let remainingFuel = object.fuelKg - (object.fuelBurnRateKgS * object.timeSeconds) 
 
 // an arrow function named calcNewVel that takes an object props as its argument.
 const calcNewVel = (props) => {
@@ -29,7 +29,7 @@ const calcNewVel = (props) => {
 }
 
 // declaring a variable newVelocity and assigning it the value returned by a function calcNewVel
-let newVelocity = calcNewVel(props);
+let newVelocity = calcNewVel(object);
 
 // Consoling the output for the corrected new velocity, distance and remaining fuel
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
