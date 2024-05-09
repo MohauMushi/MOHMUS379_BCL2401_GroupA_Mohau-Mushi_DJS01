@@ -1,3 +1,6 @@
+// Units conversion
+const conversionRate = 3.6; // 1 m/s = 3.6 km/h
+
 const object = calcNewVel({
   // velocity is an object with 'value' and 'measurement' properties
   velocity: {
@@ -30,8 +33,6 @@ const object = calcNewVel({
     measurement: "kg/s", // Unit of measurement for fuel burn rate
   },
 });
-// Units conversion
-const conversionRate = 3.6; // 1 m/s = 3.6 km/h
 
 //calculting new distance
 const newDistance = object.distance.value + (object.velocity.value * object.timeSeconds.value / 3600);
