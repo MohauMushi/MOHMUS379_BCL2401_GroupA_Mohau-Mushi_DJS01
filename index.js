@@ -5,7 +5,7 @@ const object = calcNewVel({
   // velocity is an object with 'value' and 'measurement' properties
   velocity: {
     value: 10000, // Initial velocity value (10000 km/h)
-    measurement: "km/h", // Unit of measurement for velocity
+    measurement: "km/", // Unit of measurement for velocity
   },
   // acceleration is an object with 'value' and 'measurement' properties
   acceleration: {
@@ -54,7 +54,6 @@ function calcNewVel(props) {
   }
 
   // this code is validating the measurement properties of various objects against expected units
-try {
   if (velocity.measurement !== "km/h") {
     throw new Error("Invalid measurement unit for velocity. Expected: km/h");
   } else if (acceleration.measurement !== "m/s^2") {
@@ -68,9 +67,7 @@ try {
   } else if (fuelBurnRate.measurement !== "kg/s") {
     throw new Error("Invalid measurement unit for fuel burn rate. Expected: kg/s");
   }
-} catch (error) {
-  console.error("An error occurred:", error.message);
-}
+
   // Calculate the new velocity
   const newVelocity = velocity.value + (acceleration.value * timeSeconds.value) * conversionRate;
   
