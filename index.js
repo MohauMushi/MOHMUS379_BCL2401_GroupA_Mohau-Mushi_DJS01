@@ -50,6 +50,8 @@ function calcNewVel(props) {
   // Calculate the new velocity
   const newVelocity = velocity.value + (acceleration.value * timeSeconds.value) * conversionRate;
   
+  // this code creates a new object that contains all the properties from the props object, and returns the new Velocity
+  return {...props, velocityKm: newVelocity};
 
   }
 
