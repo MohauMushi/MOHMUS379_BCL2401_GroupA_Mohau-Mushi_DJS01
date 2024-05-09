@@ -59,6 +59,6 @@ function calcNewVel(props) {
 let newVelocity = calcNewVel(object);
 
 // Consoling the output for the corrected new velocity, distance and remaining fuel
-console.log(`Corrected New Velocity: ${newVelocity} km/h`);
-console.log(`Corrected New Distance: ${newDistanceKm} km`);
+console.log(`Corrected New Velocity: ${object.velocityKm} km/h`);
+console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
