@@ -34,10 +34,10 @@ const object = calcNewVel({
 const conversionRate = 3.6; // 1 m/s = 3.6 km/h
 
 //calculting new distance
-let newDistanceKm = object.distanceKm + (object.velocityKmH * object.timeSeconds/3600) 
+const newDistance = object.distance.value + (object.velocity.value * object.timeSeconds.value / 3600);
 
 //calculating remaining fuel
-let remainingFuel = object.fuelKg - (object.fuelBurnRateKgS * object.timeSeconds) 
+const remainingFuel = object.fuel.value - (object.fuelBurnRate.value * object.timeSeconds.value);
 
 // an arrow function named calcNewVel that takes an object props as its argument.
 const calcNewVel = (props) => {
