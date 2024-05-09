@@ -47,6 +47,24 @@ function calcNewVel(props) {
   // Destructuring the required properties from props
   const {velocity, acceleration, timeSeconds, distance, fuel, fuelBurnRate,} = props;
 
+  // this code is validating the measurement properties of various objects against expected units
+try {
+  if (velocity.measurement !== "km/h") {
+    throw new Error("Invalid measurement unit for velocity. Expected: km/h");
+  } else if (acceleration.measurement !== "m/s^2") {
+    throw new Error("Invalid measurement unit for acceleration. Expected: m/s^2");
+  } else if (timeSeconds.measurement !== "s") {
+    throw new Error("Invalid measurement unit for time. Expected: s");
+  } else if (distance.measurement !== "km") {
+    throw new Error("Invalid measurement unit for distance. Expected: km");
+  } else if (fuel.measurement !== "kg") {
+    throw new Error("Invalid measurement unit for fuel. Expected: kg");
+  } else if (fuelBurnRate.measurement !== "kg/s") {
+    throw new Error("Invalid measurement unit for fuel burn rate. Expected: kg/s");
+  }
+} catch (error) {
+  console.error("An error occurred:", error.message);
+}
   // Calculate the new velocity
   const newVelocity = velocity.value + (acceleration.value * timeSeconds.value) * conversionRate;
   
