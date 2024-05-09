@@ -34,6 +34,41 @@ const object = calcNewVel({
   },
 });
 
+// Helper function to check if a value is a valid number
+function isValidNumber(value) {
+  return typeof value === "number" && isFinite(value);
+}
+
+  // Check velocity
+  if (!isValidNumber(object.velocity.value) || object.velocity.value <= 0) {
+    throw new Error("Initial velocity must be a positive number.");
+  }
+
+  // Check acceleration
+  if (!isValidNumber(object.acceleration.value) || object.acceleration.value <= 0) {
+    throw new Error("Acceleration must be a positive number.");
+  }
+
+  // Check timeSeconds
+  if (!isValidNumber(object.timeSeconds.value) || object.timeSeconds.value < 0) {
+    throw new Error("Time value must be a positive number.");
+  }
+
+  // Check distance
+  if (!isValidNumber(object.distance.value) || object.distance.value < 0) {
+    throw new Error("Initial distance must be a non-negative number.");
+  }
+
+  // Check fuel
+  if (!isValidNumber(object.fuel.value) || object.fuel.value < 0) {
+    throw new Error("Initial fuel value must be a positive number.");
+  }
+
+  // Check fuelBurnRate
+  if (!isValidNumber(object.fuelBurnRate.value) || object.fuelBurnRate.value < 0) {
+    throw new Error("Fuel burn rate must be a positive number.");
+  }
+
 //calculting new distance
 const newDistance = object.distance.value + (object.velocity.value * object.timeSeconds.value / 3600);
 
