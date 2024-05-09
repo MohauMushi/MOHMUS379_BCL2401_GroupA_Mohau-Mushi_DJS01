@@ -39,17 +39,19 @@ const newDistance = object.distance.value + (object.velocity.value * object.time
 //calculating remaining fuel
 const remainingFuel = object.fuel.value - (object.fuelBurnRate.value * object.timeSeconds.value);
 
-// an arrow function named calcNewVel that takes an object props as its argument.
-const calcNewVel = (props) => {
+// A function named calcNewVel that takes an object props as its argument.
+function calcNewVel(props) {
    // Check if props is provided, throw an error if not
-  if(!props) throw new Error(`"props" is requred`);
+  if (!props) throw new Error("props is required");
   
-  // Destructure the required properties from props
-  const {accelerationMs2, velocityKmH, timeSeconds} = props;
+  // Destructuring the required properties from props
+  const {velocity, acceleration, timeSeconds, distance, fuel, fuelBurnRate,} = props;
 
   // Calculate the new velocity
-  return velocityKmH + ((accelerationMs2 * timeSeconds) * conversionRate);
-}
+  const newVelocity = velocity.value + (acceleration.value * timeSeconds.value) * conversionRate;
+  
+
+  }
 
 // declaring a variable newVelocity and assigning it the value returned by a function calcNewVel
 let newVelocity = calcNewVel(object);
