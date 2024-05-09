@@ -5,7 +5,7 @@ const object = calcNewVel({
   // velocity is an object with 'value' and 'measurement' properties
   velocity: {
     value: 10000, // Initial velocity value (10000 km/h)
-    measurement: "km/", // Unit of measurement for velocity
+    measurement: "km/h", // Unit of measurement for velocity
   },
   // acceleration is an object with 'value' and 'measurement' properties
   acceleration: {
