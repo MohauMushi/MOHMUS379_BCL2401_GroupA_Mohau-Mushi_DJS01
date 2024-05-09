@@ -1,12 +1,35 @@
-//A constant object named object 
-const object = {
- velocityKmH : 10000, // velocity (km/h)
- accelerationMs2 : 3, // acceleration (m/s^2)
- timeSeconds : 3600, // seconds (1 hour)
- distanceKm : 0, // distance (km)
- fuelKg : 5000, // remaining fuel (kg)
- fuelBurnRateKgS : 0.5 // fuel burn rate (kg/s)
-}
+const object = calcNewVel({
+  // velocity is an object with 'value' and 'measurement' properties
+  velocity: {
+    value: 10000, // Initial velocity value (10000 km/h)
+    measurement: "km/h", // Unit of measurement for velocity
+  },
+  // acceleration is an object with 'value' and 'measurement' properties
+  acceleration: {
+    value: 3, // Acceleration value (3 m/s^2)
+    measurement: "m/s^2", // Unit of measurement for acceleration
+  },
+  // timeSeconds is an object with 'value' and 'measurement' properties
+  timeSeconds: {
+    value: 3600, // Time value (3600 seconds or 1 hour)
+    measurement: "s", // Unit of measurement for time
+  },
+  // distance is an object with 'value' and 'measurement' properties
+  distance: {
+    value: 0, // Initial distance value (0 km)
+    measurement: "km", // Unit of measurement for distance
+  },
+  // fuel is an object with 'value' and 'measurement' properties
+  fuel: {
+    value: 5000, // Initial fuel value (5000 kg)
+    measurement: "kg", // Unit of measurement for fuel
+  },
+  // fuelBurnRate is an object with 'value' and 'measurement' properties
+  fuelBurnRate: {
+    value: 0.5, // Fuel burn rate value (0.5 kg/s)
+    measurement: "kg/s", // Unit of measurement for fuel burn rate
+  },
+});
 // Units conversion
 const conversionRate = 3.6; // 1 m/s = 3.6 km/h
 
